@@ -11,7 +11,7 @@ Code to generate Voronoi nearest-neighbour density images like:
 
 `python voronoi.py example_points.npy example_probabilities.npy`
 
-Running the command as given will produce example_figure.png, however the .npy files may be replaced as follows:
+Running the command as given will produce images/2neighbours.png (identical to images/example_figure.png), however the .npy files may be replaced as follows:
 
   - example_points.npy:
       - *ndarray of floats, shape (npoints, 2)*
