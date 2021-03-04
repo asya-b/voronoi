@@ -131,11 +131,11 @@ ax.set_ylabel('[deg]',fontsize=10)
 N = len(vor.point_region)
 t1 = time.time()
 for r in range(N):
-    if(r>0):print('estimated time to completion: {1:03.0f} minutes\t{0:06.2f}%'.format(r/N*100,(time.time()-t1)/60/r*(N-r)),end='\r')
     region = vor.regions[vor.point_region[r]]
     if not -1 in region:
         polygon = [vor.vertices[i] for i in region]
         ax.fill(*zip(*polygon),RGBtoHex(mapper.to_rgba(den[r])),edgecolor=RGBtoHex(mapper.to_rgba(den[r])),linewidth=0.25)
+    print('estimated time to completion: {1:03.0f} minutes\t{0:06.2f}%'.format((r+1)/N*100,(time.time()-t1)/60/(r+1)*(N-r-1)),end='\r')
 
 # ----------------------------------------------------------------------------------------------
 print('\nsaving image...\r')
